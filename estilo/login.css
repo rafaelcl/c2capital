@@ -1,0 +1,11 @@
+
+#login {
+    background-image:url(../img/login.fw.png);
+	height: 300px;
+	width: 300px;
+	float: left;
+	margin-top: 250px;
+	margin-right: 350px;
+	margin-bottom: 20px;
+	margin-left: 350px;
+}

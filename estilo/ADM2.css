@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+html,body {
+	padding: 0;
+	margin: 0;
+}
+
+#MainBox {
+	height: auto;
+	width: 1250px;
+}
+#topo1 {
+	background-color: #212934;
+	height: 80px;
+	width: 250px;
+	float:left;
+}
+#topo2 {
+	background-color: #171F2A;
+	height: 10px;
+	width: 250px;
+	float:left;
+}
+#meio {
+	height: auto;
+	width: 600px;
+	float:right;
+}
+#esquerdo {
+	height: 100%;
+	width: 250px;
+	float:left;
+	-webkit-box-shadow: 3px 3px 3px #424251;
+	-moz-box-shadow: 3px 3px 3px #424251;
+	box-shadow: 3px 3px 3px #424251;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1999999999;
+}
+#menuI {
+	background-color: #212934;
+	height: 100%;
+	width: 250px;
+	
+}
+
+#textB {
+	background-image:url(../img/transp.fw.png);
+	position:absolute;
+	left:19%;
+	height: 880px;
+	width: 900px;
+	margin-left: 70px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	margin-top:80px;
+	-webkit-box-shadow: 3px 3px 3px #424251;
+	-moz-box-shadow: 3px 3px 3px #424251;
+	box-shadow: 3px 3px 3px #424251;
+	margin-top: 25px;
+}
+#titulo {
+	float: left;
+	height: 30px;
+	width: 870px;
+	margin-right: 15px;
+	margin-left: 15px;
+	color: #000;
+	font-size: 20px;
+	text-align: center;
+}
+#texto {
+	float: left;
+	height: auto;
+	width: 870px;
+	margin-top: 15px;
+	margin-left: 15px;
+	color: #000;
+    font-size: large;
+    font-family: "Times New Roman", Times, serif;
+}
+#borda {
+	float: left;
+	height: 3px;
+	width: 870px;
+	margin-top: 30px;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+#item {
+	float: left;
+	height: auto;
+	width: 218px;
+	border-bottom: 1px solid #171F2A;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	
+}
+.itemM {
+	display: block;
+	color: #fff;
+}
+
+.itemM:hover {
+	background:#2C3545;
+}
+
+.itemM:active {
+	background: #FFF;
+	color: #89CB9D;
+	font-style: normal;
+}
+.logo{
+	margin: 10px;
+    height: 62px;
+    width: 225px;
+}
+
+#media (min-width: 100px) and (max-width: 200px) {
+	.selector1 {
+		property1: value1;
+		property2: value2;
+	}
+	.selector2 {
+		property1: value1;
+		property2: value2;
+	}
+
+
+ 

@@ -1,0 +1,136 @@
+@charset "utf-8";
+#slide {
+	background-color: #FFF;
+	float: left;
+	height: 340px;
+	width: 930px;
+	margin-top: 0px;
+	margin-right: 35px;
+	margin-left: 35px;
+    text-align: center;
+}
+#imoveis {
+	float: right;
+	height: 429px;
+	width: 875px;
+	margin-right: 35px;
+	margin-left: 35px;
+	margin-top: 55px;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Lato', Arial, sans-serif;
+	background-color:#fff;
+    text-align: center;
+}
+#titleimoveis {
+	background-color: #000;
+	float: left;
+	height: 35px;
+	width: 930px;
+	margin-bottom: 35px;
+	color: #000;
+}
+#imovel1 {
+
+	height: 300px;
+	width: 210px;
+}
+
+#imovel2 {
+	
+	height: 300px;
+	width: 210px;
+	
+}
+
+#imovel3 
+{
+	
+	height: 300px;
+	width: 210px;
+
+}
+#imovel4 
+{
+	
+	height: 300px;
+	width: 210px;
+		
+}
+
+/*#noticias {
+	float: left;
+	height: 350px;
+	width: 950px;
+	margin: 0px 35px 0px 35px;
+	color: #000;
+	background-color:red;
+	margin-top: 100px;
+	
+ }*/
+/*#titlenoticias {
+	background-color: #000;
+	float: left;
+	height: 35px;
+	width: 600px;
+	margin-bottom: 35px;
+}*/
+
+#noticia0 
+{
+    background-color: #fff;
+	float: right;
+	margin-right: 99px;
+	margin-top: 50px;
+	height: auto;
+	width: auto;
+} 
+#noticia1 {
+	background-color: #FFF;
+	float: right;
+	margin-right: 90px;
+	margin-top: 50px;
+	height: auto;
+	width: 192px;
+	
+}
+#noticia2 {
+	background-color: #FFF;
+	float: right;
+	height: auto;
+	width: auto;
+	margin-right: 130px;
+	margin-top: 50px;
+}
+/*#noticia3 {
+	background-color: #FFF;
+	float: left;
+	height: auto;
+	width: auto;
+	margin-right:10px;
+}*/
+
+#loginhome {
+    background-image:url(../img/login.fw.png);
+	height: 300px;
+	width: 300px;
+	float:right;
+	margin-right: 35px;
+	margin-bottom: 35px;
+	margin-left: 30px;
+}
+# cinto
+{
+    height: auto;
+    width: 930px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 10px;
+    float: left;
+}
+
+#caixa
+{
+    height:auto;
+    width:150px;
+}

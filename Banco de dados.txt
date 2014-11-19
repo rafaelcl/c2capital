@@ -1,0 +1,119 @@
+drop database c2capital;
+create database c2capital;
+use c2capital;
+
+create table administrador                       
+(
+id_adm int not null auto_increment,
+nome_adm varchar(100) not null,
+login_adm varchar(10)not null,
+senha_adm varchar(20) not null,
+email_adm varchar(100) not null,
+status varchar(10) not null,
+primary key (id_adm),
+constraint sta check (status in("1","0")),
+constraint uq_adm unique (login_adm)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+ROW_FORMAT=DEFAULT;
+
+
+create table tipo_imovel
+(
+id_tpimo int not null auto_increment,
+tipo_imo varchar(100) not null,
+status char(2) not null,
+constraint sta check (status in("1","0")),
+primary key (id_tpimo)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+ROW_FORMAT=DEFAULT;
+
+create table imovel
+(
+id_imo int not null auto_increment,
+nome_imo varchar(100) not null,
+estado_imo varchar(10) not null,
+cidade_imo varchar(100) not null,
+bairro_imo varchar(100) not null,
+area_imo varchar(100) not null,
+endereco_imo varchar(100) not null,
+num_imo varchar(4) not null,
+complemento_imo varchar(100),
+id_tpimo int not null,
+valormerc_imo double not null,
+valorvenda_imo double not null,
+descricao_imo varchar(2000),
+img1_imo varchar(255),
+img2_imo varchar(255),
+img3_imo varchar(255),
+primary key(id_imo),
+foreign key(id_tpimo) references tipo_imovel(id_tpimo)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+ROW_FORMAT=DEFAULT;
+
+create table cliente
+(
+id_cli int not null auto_increment,
+nome_cli varchar(100) not null,
+sexo_cli char(2) not null,
+cpf_cli varchar(15) not null,
+cel_cli varchar(20),
+tel_cli varchar(20) not null,
+cep_cli varchar(10) not null,
+rua_cli varchar(50) not null,
+num_cli varchar(10) not null,
+bai_cli varchar(50) not null,
+comp_cli varchar(50),
+cid_cli varchar(20) not null,
+est_cli char(3) not null,
+primary key(id_cli),
+constraint uq_cli unique (cpf_cli),
+constraint ch_cli check (sx_cli in ("F","M"))
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+ROW_FORMAT=DEFAULT;
+
+insert into administrador values(0,"Leticia","adm","adm","leticiadecamposlima@gmail.com","1");
+
+insert into cliente values(0,"Fernanda Mendonca", "F", "469.942.968-81", "(12) 99156-8268", "(12) 3021-7899", "12.240570","Avenida Cassiano", "231", "Jardim Alvorada", "", "Jambeiro", "SP");
+
+insert into cliente values(0,"Maria Julia", "F", "026.014.568-84", "(12) 98133-9662", "(12) 3921-3192", "12.215090", "Manoel Joaquim de Oliveira", "493", "Monte Castelo", "Ap. 901", "Jambeiro", "SP");
+
+
+insert into tipo_imovel values(0,"Casa", "1");
+
+insert into tipo_imovel values(0,"Apartamento", "1");
+
+insert into tipo_imovel values(0,"Galpão", "1");
+
+insert into tipo_imovel values(0,"Terreno", "1");
+
+insert into tipo_imovel values(0,"Comercial", "1");
+
+
+insert into imovel values(0,"Comercial", "SP", "Jacarei", "Colonia da Boa Vista","71,54", "Avenida Jose Teodoro de Siqueira", "140","", "5", "4000000", "1600000", "Distanciando de 610 metros da Avenida Nilo Maximo. Esta em um bom estavel, com localizacao segura,e uma otima vinhinhaca. ", "~\\imgCad\\imo1.jpg" , "~\\imgCad\\imo2.jpg", "~\\imgCad\\imo3.jpg");
+
+insert into imovel values(0,"Casa", "SP", "Jacarei", "Jardim Siesta","450", "Avenida Estados Unidos", "749", "", "1", "375000", "150000", "A casa esta edificada em um terreno, tendo 450 metros quadrados de area contruida. Com espaco para 3 dormitorios, 2 suites, 1 cozinha, 3 banheiros, 1 piscina e churrasqueira. Area mais segura da cidade, contendo comercios em sua volta.", "~\\imgCad\\imo4.jpg", "~\\imgCad\\imo5.jpg", "~\\imgCad\\imo6.jpg");
+
+
+insert into imovel values(0,"Terreno", "SP", "Jacarei", "Condominio Lagoinha","1050", "Estrada Sao Benedito do Fogio", "1000", "Condominio Lagoinha", "4", "500000", "150000", "O terreno tem nele contrucao edificada (abandonada) medindo 400 metros quadrados. Esse terreno tem solo em bom estado, e uma area localizada segura da cidade. Vista maravilhosa do condominio. Area segura.", "~\\imgCad\\imo7.jpg", "~\\imgCad\\imo8.jpg", "~\\imgCad\\imo9.jpg");
+
+
+insert into imovel values(0,"Apartamento", "SP", "Ubatuba", "Tenorio","197", "Rua Um", "87", "Edificio Marbella", "2", "500000", "150000", "Apartamento tipo cobertura, duplex, com 2 dormitorios, 2 suites, 1 cozinha e 2 banheiros. Contendo sindico 24 horas, com seguranca exemplar. Area mais segura da cidade, com comercios em sua volta.", "~\\imgCad\\imo10.jpg", "~\\imgCad\\imo11.jpg", "~\\imgCad\\sem-foto.png");
+
+insert into imovel values(0,"Casa 2", "SP", "Sao Jose dos Campos", "Jardim das Colinas", "750","Jose Raimundo da Silva", "213", "", "1", "760000", "1800000", "Casa tem 390 metros quadrados de area contruida. Com 3 quartos, 2 banheiros, 2 salas, area de lazer, 1 cozinha, espaco livre, com dois andares, segura. A area e bem segura e conforto para a sua vizinhaca.", "~\\imgCad\\imo12.jpg", "~\\imgCad\\sem-foto.png", "~\\imgCad\\sem-foto.png");
+
+
+insert into imovel values(0,"Terreno 2", "SP", "Sao Jose dos Campos", "Parque Industrial","2210", "Avenida George Eastman", "1501", "", "4", "2000000", "510000", "Terreno perto de uma localidade segura e populosa, alem de ser amplo.", "~\\imgCad\\imo13.jpg", "~\\imgCad\\imo14.jpg", "~\\imgCad\\imo15.jpg");
+
+
+insert into imovel values(0,"Galpao", "SP", "Ubatuba", "Parque Industrial","600", "Avenida Fortaleza", "409", "", "3", "1700000", "840000", "O galpao nele edificado tem area contruida de 750 metros quadrados. Com teto alto, localidade segura, podendo ser espaco para varias coisas, como por exemplos, festas, comercios etc.", "~\\imgCad\\imo16.jpg", "~\\imgCad\\sem-foto.png", "~\\imgCad\\sem-foto.png");
+
+
+

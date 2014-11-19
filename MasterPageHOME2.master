@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageHOME2.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>C2Capital</title>
+<link href="estilo/HOME.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	    .style1
+        {
+        }
+	</style>
+<![endif]-->
+<script type="text/javascript" 
+    src="Scripts/jquery-1.4.1.js">
+    </script>  
+ 
+ <script type="text/javascript" 
+ src="Scripts/jquery.maskedinput-1.2.2.js">
+ </script>  
+ 
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $(function () {
+
+             $("#txtTel").mask("(99) 9999-9999");
+             $("#txtCEP").mask("99999-999");
+             $("#txtData").mask("99/99/9999");
+             $("#txtCPF").mask("999.999.999-99");
+             $("#rg").mask("99.999.999-9*");
+             $("#cnpj").mask("99.999.999/9999-99");
+
+             $('#txtCel').focusout(function () {
+                 var phone, element;
+                 element = $(this);
+                 element.unmask();
+                 phone = element.val().replace(/\D/g, '');
+                 if (phone.length > 10) {
+                     element.mask("(99) 99999-999?9");
+                 } else {
+                     element.mask("(99) 9999-9999?9");
+                 }
+             }).trigger('focusout');
+         });
+     });
+
+       
+ </script>  
+<asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+</head>
+
+<body>
+<div id="fb-root"></div>
+<script>   (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));</script>
+    <form id="form1" runat="server">
+<div id="mainBox" style="background: url(img/back.fw.png);">
+<div id="main">
+  <div id="topo">
+  <div id="HLogo" class="style1">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+  <asp:ImageButton ID="btnLogo" runat="server" Height="68px"  
+            ImageUrl="img/logo_site.png" Width="257px"  onclick="btnLogo_Click" />
+  </div>
+  <div id="topo2"></div>
+    </div>
+    
+     <div id="meio">
+  	<div id="conteudo">
+      <div class="shadow-left"></div>
+      <div class="shadow-right"></div>
+      <div class="conteudo-filho">
+  	  <div id="menu">
+  	    <ul id="MenuBar1" class="MenuBarHorizontal">        
+  	      <li><a href="HOME.aspx">HOME</a>  </li>
+          <li> <a href="IMOVEIS.aspx">IMÓVEIS</a><ul>
+            <li><a href="APARTAMENTO.aspx" title="Apartamento">Apartamento</a></li>
+            <li><a href="CASA.aspx" title="Casa">Casa</a></li>
+            <li><a href="COMERCIAL.aspx" title="Comercial">Comercial</a></li>
+            <li><a href="GALPAO.aspx" title="Galpão">Galpão</a></li>
+            <li><a href="TERRENO.aspx" title="Terreno">Terreno</a></li>
+              </ul> </li>
+  	      <li><a href="QUEMSOMOS.aspx">QUEM SOMOS</a></li>
+  	      <li><a href="CONTATO.aspx">CONTATO</a></li>
+        </ul>
+  	  </div>
+      </div>
+<div id="conteudo2"><asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        <asp:LinkButton ID="lblConectSair" runat="server" onclick="lblConectSair_Click"></asp:LinkButton>
+        </asp:ContentPlaceHolder>
+ </div>
+      </div>
+    </div>
+  </div>
+ </div> 
+<div id = "principalRodape"><div id="rodape"><div id="menu_rodape">
+
+    <br />
+    <br />
+    <br />
+    <br />
+    &nbsp;&nbsp;&nbsp;<asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click" 
+        
+        style="font-size: large; text-align: left; color: #FFFFFF; font-family: Nyala">HOME</asp:LinkButton>
+        <p> </p>&nbsp;&nbsp;&nbsp;<asp:LinkButton
+        ID="LinkButton2" runat="server" onclick="LinkButton2_Click" 
+        
+        style="color: #FFFFFF; font-family: Nyala; text-align: left; font-size: large">IMÓVEIS</asp:LinkButton>
+        <p> </p>
+        &nbsp;&nbsp;&nbsp;<asp:LinkButton ID="LinkButton3"
+            runat="server" onclick="LinkButton3_Click" 
+        
+        style="color: #FFFFFF; font-family: Nyala; font-size: large; text-align: left">QUEM SOMOS</asp:LinkButton>
+   <p> </p> &nbsp;&nbsp;&nbsp;<asp:LinkButton ID="LinkButton4" runat="server" onclick="LinkButton4_Click" 
+        
+        style="color: #FFFFFF; font-size: large; font-family: Nyala; text-align: left; ">CONTATO</asp:LinkButton></div> <div id ="face"><div class="fb-like-box" data-href="https://www.facebook.com/c2capital?fref=ts" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div></div></div></div>
+<script type="text/javascript">
+    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", { imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif" });
+</script>
+    </form>
+</body>
+</html>
